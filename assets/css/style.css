@@ -1,0 +1,50 @@
+body {
+    background-image: url(https://i2.wp.com/thefreshimages.com/wp-content/uploads/2018/02/star-wars-wallpaper-4.jpg?resize=1920%2C1040&ssl=1);
+    background-size: 100%;
+}
+h1 {
+    text-align: center;
+}
+#anakin-img {
+    width: 97%;
+}
+#obi-img {
+    width: 96%;
+}
+#kylo-img {
+    width: 103%;
+}
+#anakin-text {
+    color: #cf9a6d;
+}
+#obi-wan-text {
+    color: #bfd3e3;
+}
+#maul-text {
+    color: black;
+}
+#kylo-text {
+    color: red;
+}
+#character {
+    display: none;
+}
+#enemies {
+    display: none;
+}
+#enemies-title {
+    text-align: center;
+}
+#defender {
+    display: none;
+}
+#fightDisplay1 {
+    font-size: 50px;
+    color: white;
+    margin: auto;
+}
+#fightDisplay2 {
+    font-size: 50px;
+    color: white;
+    margin: auto;
+}
