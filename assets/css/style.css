@@ -21,10 +21,10 @@ h1 {
     color: #bfd3e3;
 }
 #maul-text {
-    color: black;
+    color: #ff5d51;
 }
 #kylo-text {
-    color: red;
+    color: #ff0101;
 }
 #character {
     display: none;
@@ -39,12 +39,15 @@ h1 {
     display: none;
 }
 #fightDisplay1 {
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     margin: auto;
 }
 #fightDisplay2 {
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     margin: auto;
+}
+#defeated {
+    display: none;
 }
