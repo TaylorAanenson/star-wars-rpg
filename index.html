@@ -9,11 +9,11 @@
     <title>Star Wars RPG</title>
 </head>
 <body>
-   <h1 class="text-center">STAR WARS RPG!</h1>
+   <h1 id="header" class="text-center">STAR WARS RPG!</h1>
    <h1 id="title">PICK A CHARACTER!</h1>
 <div id="start-div" class="container">
 <div id="card-img" class="row">
-    <div id="card-img" class="col" data-character="anakin" data-health="150" data-attack="12" data-counter="20">
+    <div id="card-img" class="col" data-character="anakin">
     <span id="anakin-img" class="card bg-dark text-white">
         <img class="card-img" src="assets/images/Anakin.png" alt="Anakin Skywalker">
         <span id="anakin-text" class="card-img-overlay">
@@ -22,7 +22,7 @@
         </span>
     </span>
     </div>
-    <div id="card-img" class="col" data-character="obi-wan" data-health="120" data-attack="8" data-counter="15">
+    <div id="card-img" class="col" data-character="obi-wan">
         <span id="obi-img" class="card bg-dark text-white">
             <img class="card-img" src="assets/images/Obi-Wan.jpg" alt="Obi Wan Kenobi">
             <span id="obi-wan-text" class="card-img-overlay">
@@ -31,7 +31,7 @@
             </span>
         </span>
     </div>
-    <div id="card-img" class="col" data-character="maul" data-health="200" data-attack="16" data-counter="25">
+    <div id="card-img" class="col" data-character="maul">
         <span class="card bg-dark text-white">
             <img class="card-img" src="assets/images/Darth-Maul.png" alt="Darth Maul">
             <span id="maul-text" class="card-img-overlay">
@@ -40,7 +40,7 @@
             </span>
         </span>
     </div>
-    <div id="card-img" class="col" data-character="kylo" data-health="180" data-attack="14" data-counter="22">
+    <div id="card-img" class="col" data-character="kylo">
         <span id="kylo-img" class="card bg-dark text-white">
             <img class="card-img" src="assets/images/Kylo-Ren.jpg" alt="Kylo Ren">
             <span id="kylo-text" class="card-img-overlay">
@@ -70,6 +70,24 @@
 </div>
 </div>
 <div id="defeated"></div>
+
+<audio id="load-music" preload="auto" src="assets/sounds/load-music.mov"></audio>
+<audio id="opening-music" preload="auto" src="assets/sounds/opening-music.mov"></audio>
+<audio id="fight-music" preload="auto" src="assets/sounds/fight-music.mov"></audio>
+<audio id="opening-lightsaber" preload="auto" src="assets/sounds/opening-lightsaber.mov"></audio>
+<audio id="closing-lightsaber" preload="auto" src="assets/sounds/closing-lightsaber.mov"></audio>
+<audio id="attack1" preload="auto" src="assets/sounds/attack1.mov"></audio>
+<audio id="attack2" preload="auto" src="assets/sounds/attack2.mov"></audio>
+<audio id="attack3" preload="auto" src="assets/sounds/attack3.mov"></audio>
+<audio id="attack4" preload="auto" src="assets/sounds/attack4.mov"></audio>
+<audio id="attack5" preload="auto" src="assets/sounds/attack5.mov"></audio>
+<audio id="attack6" preload="auto" src="assets/sounds/attack6.mov"></audio>
+<audio id="attack7" preload="auto" src="assets/sounds/attack7.mov"></audio>
+<audio id="attack8" preload="auto" src="assets/sounds/attack8.mov"></audio>
+<audio id="attack9" preload="auto" src="assets/sounds/attack9.mov"></audio>
+<audio id="attack10" preload="auto" src="assets/sounds/attack10.mov"></audio>
+<audio id="attack11" preload="auto" src="assets/sounds/attack11.mov"></audio>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
