@@ -3,14 +3,14 @@ var anakinHealth = 145;
 var obiWanHealth = 130;
 var maulHealth = 160;
 var kyloHealth = 150;
-var anakinAttack = 15;
-var obiWanAttack = 18;
-var maulAttack = 16;
-var kyloAttack = 14;
-var anakinCounter = 22;
+var anakinAttack = 0;
+var obiWanAttack = 0;
+var maulAttack = 0;
+var kyloAttack = 0;
+var anakinCounter = 23;
 var obiWanCounter = 18;
 var maulCounter = 24;
-var kyloCounter = 20;
+var kyloCounter = 19;
 var characterHealth = $('.character').data('health');
 var defenderHealth = $('.defender').data('health');
 var characterAttack = $('.character').data('attack');
@@ -48,29 +48,33 @@ $(document).on('click','#card-img',function(){
     var character = $(this).data('character');
     loadMusic.pause();
     openingMusic.play();
-    if (character == 'anakin'){
+    if (character == 'Anakin'){
         $('#character').html($(this));
-        $('.character').attr('data-character','anakin');
+        $('.character').attr('data-character','Anakin');
         $('.character').attr('data-health',145);
         characterHealth = $('.character').data('health');
+        $('#anakin-health').css('color','white');
         openingLightsaber.play();
-    }else if (character == 'obi-wan'){
+    }else if (character == 'Obi-Wan'){
         $('#character').html($(this));
-        $('.character').attr('data-character','obi-wan');
+        $('.character').attr('data-character','Obi-Wan');
         $('.character').attr('data-health',130);
         characterHealth = $('.character').data('health');
+        $('#obi-wan-health').css('color','white');
         openingLightsaber.play();
-    }else if (character == 'maul'){
+    }else if (character == 'Darth Maul'){
         $('#character').html($(this));
-        $('.character').attr('data-character','maul');
+        $('.character').attr('data-character','Darth Maul');
         $('.character').attr('data-health',160);
         characterHealth = $('.character').data('health');
+        $('#maul-health').css('color','white');
         openingLightsaber.play();
-    }else if (character == 'kylo'){
+    }else if (character == 'Kylo Ren'){
         $('#character').html($(this));
-        $('.character').attr('data-character','kylo');
+        $('.character').attr('data-character','Kylo Ren');
         $('.character').attr('data-health',150);
         characterHealth = $('.character').data('health');
+        $('#kylo-health').css('color','white');
         openingLightsaber.play();
     }else{
         $('#character').show();
@@ -89,41 +93,45 @@ $(document).on('click','#img',function(){
     var button = $('<button>');
     openingMusic.pause();
     fightMusic.play();
-    if (character == 'anakin'){
+    if (character == 'Anakin'){
         $('#header').text('STAR WARS RPG!');
         $('#defender').html($(this));
-        $('.defender').attr('data-character','anakin');
+        $('.defender').attr('data-character','Anakin');
         $('.defender').attr('data-health',145);
         defenderHealth = $('.defender').attr('data-health');
+        $('#anakin-health').css('color','white');
         $('.enemies').attr('class','col-lg-3');
         openingLightsaber.play();
-    }else if (character == 'obi-wan'){
+    }else if (character == 'Obi-Wan'){
         $('#header').text('STAR WARS RPG!');
         $('#defender').html($(this));
-        $('.defender').attr('data-character','obi-wan');
+        $('.defender').attr('data-character','Obi-Wan');
         $('.defender').attr('data-health',130);
         defenderHealth = $('.defender').attr('data-health');
+        $('#obi-wan-health').css('color','white');
         $('.enemies').attr('class','col-lg-3');
         openingLightsaber.play();
-    }else if (character == 'maul'){
+    }else if (character == 'Darth Maul'){
         $('#header').text('STAR WARS RPG!');
         $('#defender').html($(this));
-        $('.defender').attr('data-character','maul');
+        $('.defender').attr('data-character','Darth Maul');
         $('.defender').attr('data-health',160);
         defenderHealth = $('.defender').attr('data-health');
+        $('#maul-health').css('color','white');
         $('.enemies').attr('class','col-lg-3');
         openingLightsaber.play();
-    }else if (character == 'kylo'){
+    }else if (character == 'Kylo Ren'){
         $('#header').text('STAR WARS RPG!');
         $('#defender').html($(this));
-        $('.defender').attr('data-character','kylo');
+        $('.defender').attr('data-character','Kylo Ren');
         $('.defender').attr('data-health',150);
         defenderHealth = $('.defender').attr('data-health');
+        $('#kylo-health').css('color','white');
         $('.enemies').attr('class','col-lg-3');
         openingLightsaber.play();
     }else{
         $('#title').html(button);
-        $(button).text('FIGHT!');
+        $(button).text('ATTACK!');
     }
 });
 
@@ -132,13 +140,13 @@ $(document).on('click','button',function(){
     var character = $('.character').attr('data-character');
     var defender = $('.defender').attr('data-character');
     var randomAttackSound = attackArray[Math.floor(Math.random()*attackArray.length)];
-    anakinAttack +=15;
-    obiWanAttack +=18;
-    maulAttack +=16;
-    kyloAttack +=14;
+    anakinAttack +=22;
+    obiWanAttack +=27;
+    maulAttack +=14;
+    kyloAttack +=23;
     
 // If character is Anakin
-    if (character == 'anakin' && defender == 'obi-wan'){
+    if (character == 'Anakin' && defender == 'Obi-Wan'){
         defenderHealth -= anakinAttack;
         characterHealth -= obiWanCounter;
         $('#fightDisplay1').text('You attacked Obi-Wan for ' + anakinAttack + ' damage');
@@ -147,7 +155,7 @@ $(document).on('click','button',function(){
         $('#obi-wan-health').text(defenderHealth);
         randomAttackSound.play();
 
-    }else if (character == 'anakin' && defender == 'maul'){
+    }else if (character == 'Anakin' && defender == 'Darth Maul'){
         defenderHealth -= anakinAttack;
         characterHealth -= maulCounter;
         $('#fightDisplay1').text('You attacked Darth Maul for ' + anakinAttack + ' damage');
@@ -156,7 +164,7 @@ $(document).on('click','button',function(){
         $('#maul-health').text(defenderHealth);
         randomAttackSound.play();
 
-    }else if (character == 'anakin' && defender == 'kylo'){
+    }else if (character == 'Anakin' && defender == 'Kylo Ren'){
         defenderHealth -= anakinAttack;
         characterHealth -= kyloCounter;
         $('#fightDisplay1').text('You attacked Kylo Ren for ' + anakinAttack + ' damage');
@@ -168,7 +176,7 @@ $(document).on('click','button',function(){
     }
 
 // If character is Obi-Wan
-    if (character == 'obi-wan' && defender == 'anakin'){
+    if (character == 'Obi-Wan' && defender == 'Anakin'){
         defenderHealth -= obiWanAttack;
         characterHealth -= anakinCounter;
         $('#fightDisplay1').text('You attacked Anakin for ' + obiWanAttack + ' damage');
@@ -176,7 +184,7 @@ $(document).on('click','button',function(){
         $('#obi-wan-health').text(characterHealth);
         $('#anakin-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'obi-wan' && defender == 'maul'){
+    }else if (character == 'Obi-Wan' && defender == 'Darth Maul'){
         defenderHealth -= obiWanAttack;
         characterHealth -= maulCounter;
         $('#fightDisplay1').text('You attacked Darth Maul for ' + obiWanAttack + ' damage');
@@ -184,7 +192,7 @@ $(document).on('click','button',function(){
         $('#obi-wan-health').text(characterHealth);
         $('#maul-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'obi-wan' && defender == 'kylo'){
+    }else if (character == 'Obi-Wan' && defender == 'Kylo Ren'){
         defenderHealth -= obiWanAttack;
         characterHealth -= kyloCounter;
         $('#fightDisplay1').text('You attacked Kylo Ren for ' + obiWanAttack + ' damage');
@@ -195,7 +203,7 @@ $(document).on('click','button',function(){
     }
 
 // If character is Maul
-    if (character == 'maul' && defender == 'anakin'){
+    if (character == 'Darth Maul' && defender == 'Anakin'){
         defenderHealth -= maulAttack;
         characterHealth -= anakinCounter;
         $('#fightDisplay1').text('You attacked Anakin for ' + maulAttack + ' damage');
@@ -203,7 +211,7 @@ $(document).on('click','button',function(){
         $('#maul-health').text(characterHealth);
         $('#anakin-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'maul' && defender == 'obi-wan'){
+    }else if (character == 'Darth Maul' && defender == 'Obi-Wan'){
         defenderHealth -= maulAttack;
         characterHealth -= obiWanCounter;
         $('#fightDisplay1').text('You attacked Obi-Wan for ' + maulAttack + ' damage');
@@ -211,7 +219,7 @@ $(document).on('click','button',function(){
         $('#maul-health').text(characterHealth);
         $('#obi-wan-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'maul' && defender == 'kylo'){
+    }else if (character == 'Darth Maul' && defender == 'Kylo Ren'){
         defenderHealth -= maulAttack;
         characterHealth -= kyloCounter;
         $('#fightDisplay1').text('You attacked Kylo Ren for ' + maulAttack + ' damage');
@@ -222,7 +230,7 @@ $(document).on('click','button',function(){
     }
 
 // If character is Kylo
-    if (character == 'kylo' && defender == 'anakin'){
+    if (character == 'Kylo Ren' && defender == 'Anakin'){
         defenderHealth -= kyloAttack;
         characterHealth -= anakinCounter;
         $('#fightDisplay1').text('You attacked Anakin for ' + kyloAttack + ' damage');
@@ -230,7 +238,7 @@ $(document).on('click','button',function(){
         $('#kylo-health').text(characterHealth);
         $('#anakin-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'kylo' && defender == 'obi-wan'){
+    }else if (character == 'Kylo Ren' && defender == 'Obi-Wan'){
         defenderHealth -= kyloAttack;
         characterHealth -= obiWanCounter;
         $('#fightDisplay1').text('You attacked Obi-Wan for ' + kyloAttack + ' damage');
@@ -238,7 +246,7 @@ $(document).on('click','button',function(){
         $('#kylo-health').text(characterHealth);
         $('#obi-wan-health').text(defenderHealth);
         randomAttackSound.play();
-    }else if (character == 'kylo' && defender == 'maul'){
+    }else if (character == 'Kylo Ren' && defender == 'Darth Maul'){
         defenderHealth -= kyloAttack;
         characterHealth -= maulCounter;
         $('#fightDisplay1').text('You attacked Darth Maul for ' + kyloAttack + ' damage');
@@ -257,20 +265,23 @@ $(document).on('click','button',function(){
         $('#title').text('Choose another opponent');
         enemiesRemaining--;
         closingLightsaber.play();
-    }
+    } 
     if (characterHealth <= 0){
-        $('#header').text('You have been defeated.. Try Again!');
+        $('#header').text('You have been defeated..');
+        $('#title').html($('<button>'));
+        $('#enemies-title').text('');
         $('#fightDisplay1').empty();
         $('#fightDisplay2').empty();
+        $('#enemies-title').text('');
         $('#anakin-health').text('');
         $('#obi-wan-health').text('');
         $('#maul-health').text('');
         $('#kylo-health').text('');
-        $('button').text('REMATCH!');
+        $('button').text('Try Again!');
+        closingLightsaber.play();
         $(document).on('click','button',function(){
             location.reload();
         });
-        closingLightsaber.play();
     }
 
 // If player wins
@@ -283,9 +294,9 @@ $(document).on('click','button',function(){
         $('#maul-health').text('');
         $('#kylo-health').text('');
         $('button').text('REMATCH!');
+        closingLightsaber.play();
         $(document).on('click','button',function(){
             location.reload();
         });
-        closingLightsaber.play();
     }
 });
